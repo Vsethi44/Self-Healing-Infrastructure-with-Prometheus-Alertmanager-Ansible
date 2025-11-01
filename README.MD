@@ -1,10 +1,10 @@
 # ⚙️ Self-Healing Infrastructure with Prometheus, Alertmanager & Ansible  
 
-This project demonstrates a self-healing monitoring system built using Prometheus, Alertmanager, Flask, and Ansible — where infrastructure issues (like Node Exporter going down) are automatically detected, alerted, and remediated without manual intervention.
+This project demonstrates a **self-healing monitoring system** built using **Prometheus**, **Alertmanager**, **Flask**, and **Ansible** — where infrastructure issues (like Node Exporter going down) are **automatically detected, alerted, and remediated** without manual intervention. 
 
-It simulates how real-world DevOps teams build auto-recovery pipelines to ensure production-grade reliability and zero-downtime monitoring.
+It simulates how real-world DevOps teams build **auto-recovery pipelines** to ensure production-grade reliability and zero-downtime monitoring. 
 
-Flow: Prometheus → Alertmanager → Flask Webhook → Ansible
+🩺 **In short:** Prometheus *detects* → Alertmanager *alerts* → Flask Webhook *triggers* → Ansible *heals*.
 
 
 
