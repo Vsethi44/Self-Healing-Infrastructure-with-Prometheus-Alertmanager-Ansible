@@ -1,0 +1,11 @@
+
+---
+- name: Restart Node Exporter if down
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure Node Exporter service is restarted
+      ansible.builtin.systemd:
+        name: node_exporter
+        state: restarted
+
