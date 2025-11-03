@@ -1,28 +1,12 @@
 
 ```mermaid
 flowchart TD
+A[Prometheus] --> B[Alertmanager]
+B --> C[Flask Webhook]
+C --> D[Ansible Heal Playbook]
+D --> E[Restart Node Exporter]
+E --> A
 
-A[Node Exporter 🧩] -->|Metrics| B[Prometheus 📊]
-B -->|Alert triggers| C[Alertmanager 🚨]
-C -->|Sends alert via webhook| D[Flask Webhook Server 🧠]
-D -->|Triggers heal.yml| E[Ansible 🛠️]
-E -->|Restart Service| A
-
-subgraph "Self-Healing Flow"
-A --> B --> C --> D --> E --> A
-end
-
-classDef prometheus fill=#ffcc80,stroke=#e65100,color=#000,fontWeight=bold;
-classDef alertmanager fill=#ff8a80,stroke=#b71c1c,color=#000,fontWeight=bold;
-classDef flask fill=#80deea,stroke=#006064,color=#000,fontWeight=bold;
-classDef ansible fill=#c5e1a5,stroke=#33691e,color=#000,fontWeight=bold;
-classDef node fill=#d1c4e9,stroke=#4527a0,color=#000,fontWeight=bold;
-
-class B prometheus
-class C alertmanager
-class D flask
-class E ansible
-class A node
 
 
 # ⚙️ Self-Healing Infrastructure with Prometheus, Alertmanager & Ansible  
