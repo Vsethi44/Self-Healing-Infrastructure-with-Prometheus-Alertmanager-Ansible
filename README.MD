@@ -6,7 +6,7 @@ B --> C[Flask Webhook]
 C --> D[Ansible Heal Playbook]
 D --> E[Restart Node Exporter]
 E --> A
-
+```
 
 
 # ⚙️ Self-Healing Infrastructure with Prometheus, Alertmanager & Ansible  
