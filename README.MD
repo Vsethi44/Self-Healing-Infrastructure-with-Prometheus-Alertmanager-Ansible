@@ -1,3 +1,12 @@
+
+flowchart TD
+    A[🏠 Node Exporter <br> (Monitored Service)] -->|Sends metrics| B[📊 Prometheus <br> (Collects & Detects Failure)]
+    B -->|Triggers Alert| C[🚨 Alertmanager <br> (Routes & Sends Webhook)]
+    C -->|Webhook POST| D[🧠 Flask Webhook Server <br> (Receives & Processes Alert)]
+    D -->|Executes heal.yml| E[🛠️ Ansible <br> (Restarts Failed Service)]
+    E -->|Service Restored| A
+
+
 # ⚙️ Self-Healing Infrastructure with Prometheus, Alertmanager & Ansible  
 
 This project demonstrates a **self-healing monitoring system** built using **Prometheus**, **Alertmanager**, **Flask**, and **Ansible** — where infrastructure issues (like Node Exporter going down) are **automatically detected, alerted, and remediated** without manual intervention. 
