@@ -1,4 +1,5 @@
 
+```mermaid
 flowchart TD
 
 A[Node Exporter 🧩] -->|Metrics| B[Prometheus 📊]
