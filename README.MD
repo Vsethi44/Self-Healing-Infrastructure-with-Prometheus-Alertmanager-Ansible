@@ -1,5 +1,4 @@
 
-flowchart TD
     A[🏠 Node Exporter <br> (Monitored Service)] -->|Sends metrics| B[📊 Prometheus <br> (Collects & Detects Failure)]
     B -->|Triggers Alert| C[🚨 Alertmanager <br> (Routes & Sends Webhook)]
     C -->|Webhook POST| D[🧠 Flask Webhook Server <br> (Receives & Processes Alert)]
