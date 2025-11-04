@@ -1,12 +1,21 @@
 
-```mermaid
-flowchart TD
-A[Prometheus] --> B[Alertmanager]
-B --> C[Flask Webhook]
-C --> D[Ansible Heal Playbook]
-D --> E[Restart Node Exporter]
-E --> A
-```
+graph LR
+    subgraph Monitoring_Stack["📊 Monitoring Stack"]
+        A[🧠 Prometheus<br/>Collects metrics & detects failures] --> B[🚨 Alertmanager<br/>Sends alerts & triggers webhook]
+    end
+
+    subgraph Auto_Heal_Pipeline["🧩 Auto-Healing Pipeline"]
+        B --> C[🌐 Flask Webhook Server<br/>Receives alert → triggers Ansible]
+        C --> D[⚙️ Ansible Playbook (heal.yml)<br/>Executes recovery actions]
+        D --> E[💻 Node Exporter<br/>Service restarted automatically]
+    end
+
+    E -- "✅ Restored & Re-monitored" --> A
+
+    style Monitoring_Stack fill=#e3f2fd,stroke=#42a5f5,stroke-width:2px
+    style Auto_Heal_Pipeline fill=#fff3e0,stroke=#ffb74d,stroke-width:2px
+    linkStyle default stroke:#555,stroke-width:2px
+
 
 
 # ⚙️ Self-Healing Infrastructure with Prometheus, Alertmanager & Ansible  
