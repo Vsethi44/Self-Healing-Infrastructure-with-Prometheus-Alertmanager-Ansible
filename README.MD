@@ -1,4 +1,5 @@
 
+```mermaid
 graph LR
     subgraph Monitoring_Stack["📊 Monitoring Stack"]
         A[🧠 Prometheus<br/>Collects metrics & detects failures] --> B[🚨 Alertmanager<br/>Sends alerts & triggers webhook]
@@ -15,6 +16,7 @@ graph LR
     style Monitoring_Stack fill=#e3f2fd,stroke=#42a5f5,stroke-width:2px
     style Auto_Heal_Pipeline fill=#fff3e0,stroke=#ffb74d,stroke-width:2px
     linkStyle default stroke:#555,stroke-width:2px
+```
 
 
 
