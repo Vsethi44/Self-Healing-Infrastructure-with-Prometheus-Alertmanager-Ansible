@@ -1,13 +1,13 @@
 ```mermaid
 graph TD
     subgraph Monitoring_Stack["Monitoring Stack"]
-        A[Prometheus - collects metrics & detects failures] --> B[Alertmanager - sends alerts & triggers webhook]
+        A[Prometheus – collects metrics] --> B[Alertmanager – triggers webhook]
     end
 
     subgraph Auto_Heal_Pipeline["Auto-Healing Pipeline"]
-        B --> C[Flask Webhook Server - receives alert and triggers Ansible]
-        C --> D[Ansible Playbook heal.yml - executes recovery actions]
-        D --> E[Node Exporter - service restarted automatically]
+        B --> C[Flask Webhook – receives alert]
+        C --> D[Ansible Playbook – runs auto-heal]
+        D --> E[Node Exporter – restarted automatically]
     end
 
     E --> A
