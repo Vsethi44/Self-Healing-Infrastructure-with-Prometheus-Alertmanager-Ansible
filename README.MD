@@ -2,16 +2,16 @@
 ```mermaid
 graph LR
     subgraph Monitoring_Stack["📊 Monitoring Stack"]
-        A[🧠 Prometheus<br/>Collects metrics & detects failures] --> B[🚨 Alertmanager<br/>Sends alerts & triggers webhook]
+        A[Prometheus – collects metrics & detects failures] --> B[Alertmanager – sends alerts & triggers webhook]
     end
 
     subgraph Auto_Heal_Pipeline["🧩 Auto-Healing Pipeline"]
-        B --> C[🌐 Flask Webhook Server<br/>Receives alert → triggers Ansible]
-        C --> D[⚙️ Ansible Playbook (heal.yml)<br/>Executes recovery actions]
-        D --> E[💻 Node Exporter<br/>Service restarted automatically]
+        B --> C[Flask Webhook Server – receives alert and triggers Ansible]
+        C --> D[Ansible Playbook heal.yml – executes recovery actions]
+        D --> E[Node Exporter – service restarted automatically]
     end
 
-    E -- "✅ Restored & Re-monitored" --> A
+    E -- "Restored & re-monitored" --> A
 
     style Monitoring_Stack fill=#e3f2fd,stroke=#42a5f5,stroke-width:2px
     style Auto_Heal_Pipeline fill=#fff3e0,stroke=#ffb74d,stroke-width:2px
