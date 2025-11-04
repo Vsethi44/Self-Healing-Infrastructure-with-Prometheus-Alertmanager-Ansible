@@ -7,7 +7,7 @@ graph TD
     subgraph Auto_Heal_Pipeline["Auto-Healing Pipeline"]
         B --> C[Flask Webhook<br/>Receives alerts]
         C --> D[Ansible Playbook<br/>Executes auto-heal]
-        D --> E[Node Exporter<br/>Service restarted automatically]
+        D --> E[Node Exporter<br/>Service Auto Restarted]
     end
 
     E --> A
