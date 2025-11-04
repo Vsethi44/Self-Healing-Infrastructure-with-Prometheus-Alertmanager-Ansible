@@ -1,5 +1,5 @@
 ```mermaid
-graph LR
+graph TD
     subgraph Monitoring_Stack["Monitoring Stack"]
         A[Prometheus - collects metrics & detects failures] --> B[Alertmanager - sends alerts & triggers webhook]
     end
